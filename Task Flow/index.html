@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow - Organize Your Tasks Simply</title>
+
+    <!-- Main styles for the page -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Font loading kept minimal: just the main family we actually use -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome icons (features, social, etc.) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Small JS file for mobile nav + scroll reveal -->
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!--
+      Simple sticky header with logo + nav.
+      Links scroll to the main sections below.
+    -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo">TaskFlow</div>
+        <nav class="nav">
+          <a href="#features">Features</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact" class="nav-cta">Get Started</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Open navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!--
+        Hero section: short pitch, primary/secondary actions,
+        and a small "sample board" card to show the app idea.
+      -->
+      <section class="hero" id="top">
+        <div class="container hero-inner">
+          <div class="hero-text reveal">
+            <h1>Stay on top of your work with <span>TaskFlow</span></h1>
+            <p>
+              A simple task app that helps you plan your day, track your
+              progress, and reach your goals without stress.
+            </p>
+            <div class="hero-actions">
+              <a href="#pricing" class="btn btn-primary">Start for free</a>
+              <a href="#features" class="btn btn-outline">See how it works</a>
+            </div>
+            <div class="hero-meta">
+              <span><i class="fa-solid fa-circle-check"></i> Built for individuals and teams</span>
+              <span><i class="fa-solid fa-circle-check"></i> Works on all your devices</span>
+            </div>
+          </div>
+          <div class="hero-visual reveal">
+            <div class="hero-card">
+              <h2>Today’s list</h2>
+              <ul>
+                <li><span class="dot dot-green"></span> Review team tasks</li>
+                <li><span class="dot dot-blue"></span> Finish presentation deck</li>
+                <li><span class="dot dot-yellow"></span> Clear important emails</li>
+              </ul>
+              <div class="hero-progress">
+                <span>Today’s progress</span>
+                <div class="progress-bar">
+                  <div class="progress-fill"></div>
+                </div>
+                <span class="progress-percent">72%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features section: three core things the app is good at -->
+      <section class="section" id="features">
+        <div class="container">
+          <header class="section-header reveal">
+            <h2>Everything you need to stay organized</h2>
+            <p>Three key features that make TaskFlow part of your daily routine.</p>
+          </header>
+          <div class="grid-3">
+            <article class="card feature-card reveal">
+              <div class="icon">
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
+              <h3>Clear, simple structure</h3>
+              <p>
+                Break your work into focused lists and sections with a clean,
+                distraction-free interface.
+              </p>
+            </article>
+            <article class="card feature-card reveal">
+              <div class="icon">
+                <i class="fa-solid fa-bell"></i>
+              </div>
+              <h3>Smart reminders</h3>
+              <p>
+                Get notified about important deadlines so you never miss a task
+                or due date again.
+              </p>
+            </article>
+            <article class="card feature-card reveal">
+              <div class="icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <h3>Track your progress</h3>
+              <p>
+                See your daily and weekly completion trends with simple visuals
+                that keep you motivated.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reviews section: short quotes to add some social proof -->
+      <section class="section section-alt" id="reviews">
+        <div class="container">
+          <header class="section-header reveal">
+            <h2>People turning chaos into clarity</h2>
+            <p>A few thoughts from people who rely on TaskFlow every day.</p>
+          </header>
+          <div class="grid-3">
+            <article class="card review-card reveal">
+              <p class="quote">
+                "Finally a task app that lets me focus on getting work done instead of
+                managing the tool itself."
+              </p>
+              <div class="reviewer">
+                <div class="avatar">A</div>
+                <div>
+                  <h3>Ahmed</h3>
+                  <span>Project manager</span>
+                </div>
+              </div>
+            </article>
+            <article class="card review-card reveal">
+              <p class="quote">
+                "I use it for studying—it helps me split my courses, assignments and
+                priorities in a clear way."
+              </p>
+              <div class="reviewer">
+                <div class="avatar">S</div>
+                <div>
+                  <h3>Sarah</h3>
+                  <span>University student</span>
+                </div>
+              </div>
+            </article>
+            <article class="card review-card reveal">
+              <p class="quote">
+                "Our whole team uses TaskFlow now. Meetings are shorter because
+                everything is already captured and prioritized."
+              </p>
+              <div class="reviewer">
+                <div class="avatar">M</div>
+                <div>
+                  <h3>Mohamed</h3>
+                  <span>Team lead</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing section: very small, just enough to show the idea of plans -->
+      <section class="section" id="pricing">
+        <div class="container">
+          <header class="section-header reveal">
+            <h2>Choose the plan that fits you</h2>
+            <p>Start free and upgrade whenever you’re ready.</p>
+          </header>
+          <div class="grid-3 pricing-grid">
+            <article class="card pricing-card reveal">
+              <h3>Free</h3>
+              <p class="price">0$</p>
+              <p class="price-note">Forever</p>
+              <ul class="pricing-list">
+                <li>Unlimited task lists</li>
+                <li>Basic reminders</li>
+                <li>Use on one device</li>
+              </ul>
+              <button class="btn btn-outline full-width">
+                Start with Free
+              </button>
+            </article>
+
+            <article class="card pricing-card pricing-featured reveal">
+              <div class="badge">Most popular</div>
+              <h3>Pro</h3>
+              <p class="price">8$</p>
+              <p class="price-note">Per month</p>
+              <ul class="pricing-list">
+                <li>Everything in Free</li>
+                <li>Sync across all your devices</li>
+                <li>Weekly insights and reports</li>
+                <li>Priority email support</li>
+              </ul>
+              <button class="btn btn-primary full-width">
+                Try Pro for 14 days
+              </button>
+            </article>
+
+            <article class="card pricing-card reveal">
+              <h3>Team</h3>
+              <p class="price">15$</p>
+              <p class="price-note">Per member / month</p>
+              <ul class="pricing-list">
+                <li>Shared team boards</li>
+                <li>Member roles & permissions</li>
+                <li>Integrations with work tools</li>
+                <li>Dedicated account manager</li>
+              </ul>
+              <button class="btn btn-outline full-width">
+                Talk to sales
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--
+      Footer: short description, quick contact info, and social icons.
+      Kept small on purpose so it doesn't feel heavy on a one‑page site.
+    -->
+    <footer class="site-footer" id="contact">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <div class="logo">TaskFlow</div>
+          <p>Clear your mind, organize your work, and focus on what matters most.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Contact</h3>
+          <a href="mailto:hello@taskflow.app">hello@taskflow.app</a>
+          <a href="tel:+201234567890">+20 123 456 7890</a>
+        </div>
+        <div class="footer-social">
+          <h3>Follow us</h3>
+          <div class="social-icons">
+            <a href="#" aria-label="Twitter"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> TaskFlow. All rights reserved.</span>
+      </div>
+    </footer>
+  </body>
+</html>
+

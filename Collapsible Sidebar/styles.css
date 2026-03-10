@@ -1,0 +1,380 @@
+/* ==========================================================================
+   Reset & variables
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --sidebar-width-open: 240px;
+  --sidebar-width-closed: 72px;
+  --sidebar-width-mobile: min(280px, 85vw);
+  --sidebar-bg: #1a1d24;
+  --sidebar-text: #e4e6eb;
+  --sidebar-text-muted: #8b8f98;
+  --accent: #6c5ce7;
+  --border: rgba(255, 255, 255, 0.06);
+  --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  --overlay-bg: rgba(0, 0, 0, 0.4);
+  --breakpoint-mobile: 768px;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f1116 0%, #1c1f28 100%);
+  color: var(--sidebar-text);
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+
+.sidebar {
+  width: var(--sidebar-width-open);
+  min-height: 100vh;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  transition: width var(--transition);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.sidebar.is-closed {
+  width: var(--sidebar-width-closed);
+}
+
+/* Sidebar overlay (mobile drawer backdrop) */
+.sidebar-overlay {
+  display: none;
+}
+
+.sidebar.is-closed .logo-text,
+.sidebar.is-closed .nav-label,
+.sidebar.is-closed .toggle-label {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.sidebar.is-closed .logo-box {
+  justify-content: center;
+  padding: 0;
+}
+
+.sidebar.is-closed .nav-link,
+.sidebar.is-closed .toggle-btn {
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sidebar.is-closed .toggle-btn .icon {
+  transform: rotate(180deg);
+}
+
+/* --------------------------------------------------------------------------
+   Sidebar header (logo)
+   -------------------------------------------------------------------------- */
+
+.sidebar-header {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--border);
+  min-height: 72px;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0;
+  transition: padding var(--transition), justify-content var(--transition);
+}
+
+.logo-placeholder {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(145deg, var(--accent), #5a4cd6);
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-placeholder svg {
+  width: 22px;
+  height: 22px;
+  color: white;
+}
+
+.logo-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: white;
+  transition: opacity var(--transition);
+}
+
+/* --------------------------------------------------------------------------
+   Nav links
+   -------------------------------------------------------------------------- */
+
+.nav {
+  flex: 1;
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: var(--sidebar-text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background var(--transition), color var(--transition), padding var(--transition), justify-content var(--transition);
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--sidebar-text);
+}
+
+.nav-link.active {
+  background: rgba(108, 92, 231, 0.2);
+  color: var(--accent);
+}
+
+.nav-link .icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link .icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.nav-label {
+  transition: opacity var(--transition);
+}
+
+/* --------------------------------------------------------------------------
+   Sidebar footer (toggle)
+   -------------------------------------------------------------------------- */
+
+.sidebar-footer {
+  padding: 1rem 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.toggle-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--sidebar-text-muted);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), padding var(--transition), justify-content var(--transition);
+}
+
+.toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--sidebar-text);
+}
+
+.toggle-btn .icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition);
+}
+
+.toggle-btn .icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.toggle-label {
+  transition: opacity var(--transition);
+}
+
+/* ==========================================================================
+   Main content
+   ========================================================================== */
+
+.main {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.main-inner {
+  max-width: 560px;
+}
+
+.main h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.main p {
+  color: var(--sidebar-text-muted);
+  line-height: 1.6;
+}
+
+/* Menu button (hamburger) - visible on mobile only */
+.menu-btn {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 98;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  transition: background var(--transition), color var(--transition);
+}
+
+.menu-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.menu-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-btn-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ==========================================================================
+   Mobile: drawer overlay + slide animation
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: var(--overlay-bg);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition), visibility var(--transition);
+  }
+
+  body.is-drawer-open .sidebar-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  body.is-drawer-open {
+    overflow: hidden;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--sidebar-width-mobile);
+    min-height: 100vh;
+    z-index: 100;
+    transform: translateX(-100%);
+    transition: transform var(--transition);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .sidebar.is-drawer-open {
+    transform: translateX(0);
+  }
+
+  /* On mobile, when drawer is open always show full sidebar (no collapsed state) */
+  .sidebar.is-drawer-open.is-closed {
+    width: var(--sidebar-width-mobile);
+  }
+
+  .sidebar.is-drawer-open .logo-text,
+  .sidebar.is-drawer-open .nav-label,
+  .sidebar.is-drawer-open .toggle-label {
+    opacity: 1;
+    width: auto;
+    overflow: visible;
+    white-space: normal;
+  }
+
+  .sidebar.is-drawer-open .logo-box,
+  .sidebar.is-drawer-open .nav-link,
+  .sidebar.is-drawer-open .toggle-btn {
+    justify-content: flex-start;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .sidebar.is-drawer-open .logo-box {
+    padding: 4px 0;
+  }
+
+  .sidebar.is-drawer-open .toggle-btn .icon {
+    transform: none;
+  }
+
+  .menu-btn {
+    display: flex;
+  }
+
+  .main {
+    padding: 2rem 1.5rem 2rem 4rem;
+  }
+}

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic document metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elevvo Insight - Smart Analytics for Growing Teams</title>
+
+    <!-- Page description for SEO and sharing -->
+    <meta
+      name="description"
+      content="Elevvo Insight is a smart analytics dashboard that helps growing teams track product performance, understand user behavior, and make better decisions."
+    />
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-theme="light">
+    <!-- Overall page wrapper so we can center content nicely -->
+    <div class="page">
+      <!-- Fixed header with logo, navigation and theme toggle -->
+      <header class="site-header">
+        <div class="logo-group">
+          <div class="logo-mark">E</div>
+          <span class="logo-text">Elevvo Insight</span>
+        </div>
+
+        <!-- Simple navigation that scrolls to sections -->
+        <nav class="main-nav">
+          <a href="#features">Features</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#pricing">Pricing</a>
+        </nav>
+
+        <!-- Theme toggle button (handled in script.js) -->
+        <button class="theme-toggle" id="themeToggle" type="button">
+          <span class="theme-toggle__icon" aria-hidden="true">🌞</span>
+          <span class="theme-toggle__label">Light</span>
+        </button>
+      </header>
+
+      <!-- Main content sections -->
+      <main>
+        <!-- Hero: first impression and main call to action -->
+        <section class="hero" id="hero">
+          <div class="hero__content">
+            <p class="hero__eyebrow">Analytics for modern tech teams</p>
+            <h1 class="hero__title">
+              See how your product is performing in real time.
+            </h1>
+            <p class="hero__subtitle">
+              Elevvo Insight gives you a clean, live view of signups, retention,
+              and feature usage so your team always knows what is working.
+            </p>
+
+            <!-- Primary and secondary actions -->
+            <div class="hero__actions">
+              <a href="#pricing" class="btn btn--primary">Start free trial</a>
+              <a href="#features" class="btn btn--ghost">View product tour</a>
+            </div>
+
+            <!-- Quick trust indicators -->
+            <div class="hero__meta">
+              <span>✅ 14‑day free trial</span>
+              <span>•</span>
+              <span>No credit card required</span>
+            </div>
+          </div>
+
+          <!-- Simple illustrative panel instead of a real screenshot -->
+          <div class="hero__visual" aria-hidden="true">
+            <div class="hero-card hero-card--primary">
+              <div class="hero-card__header">
+                <span class="hero-card__title">Live Product Overview</span>
+                <span class="hero-card__status-pill">Live</span>
+              </div>
+              <div class="hero-card__metric-row">
+                <div class="metric">
+                  <span class="metric__label">New signups</span>
+                  <span class="metric__value">+32%</span>
+                  <span class="metric__trend metric__trend--up">▲</span>
+                </div>
+                <div class="metric">
+                  <span class="metric__label">Weekly active</span>
+                  <span class="metric__value">8,431</span>
+                  <span class="metric__trend metric__trend--up">▲</span>
+                </div>
+              </div>
+              <div class="hero-card__bar-group">
+                <span class="hero-card__bar hero-card__bar--1"></span>
+                <span class="hero-card__bar hero-card__bar--2"></span>
+                <span class="hero-card__bar hero-card__bar--3"></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Feature grid: three clear reasons to use the product -->
+        <section class="section" id="features">
+          <div class="section__header">
+            <h2>Built for product‑led teams</h2>
+            <p>
+              Elevvo Insight focuses on the numbers product managers and
+              founders actually check every day.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="card feature-card">
+              <div class="feature-card__icon">📊</div>
+              <h3>Live dashboards</h3>
+              <p>
+                Track signups, activations, churn, and engagement without
+                building custom reports or waiting for data exports.
+              </p>
+            </article>
+
+            <article class="card feature-card">
+              <div class="feature-card__icon">🧭</div>
+              <h3>User journeys</h3>
+              <p>
+                See which features new users touch first, where they drop off,
+                and what actually leads to long‑term retention.
+              </p>
+            </article>
+
+            <article class="card feature-card">
+              <div class="feature-card__icon">🤝</div>
+              <h3>Team‑friendly insights</h3>
+              <p>
+                Share simple views with product, marketing, and support so
+                everyone can make decisions from the same numbers.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Testimonials: short, specific quotes from imaginary customers -->
+        <section class="section section--muted" id="testimonials">
+          <div class="section__header">
+            <h2>Loved by growing SaaS teams</h2>
+            <p>
+              Teams use Elevvo Insight to replace spreadsheets, reduce guess
+              work, and keep experiments focused.
+            </p>
+          </div>
+
+          <div class="testimonial-list">
+            <figure class="card testimonial">
+              <blockquote>
+                “We replaced three different reports with a single Elevvo
+                dashboard. Weekly product meetings are now focused on action,
+                not arguing about numbers.”
+              </blockquote>
+              <figcaption>
+                <span class="testimonial__name">Nora Lee</span>
+                <span class="testimonial__role">Head of Product, RelayStack</span>
+              </figcaption>
+            </figure>
+
+            <figure class="card testimonial">
+              <blockquote>
+                “The live retention view helped us see which onboarding step was
+                causing users to stall. Fixing it lifted activation by 18% in a
+                single release.”
+              </blockquote>
+              <figcaption>
+                <span class="testimonial__name">Marcus Green</span>
+                <span class="testimonial__role">Founder, Shipwise</span>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- Pricing: simple two‑tier layout with clear CTA -->
+        <section class="section" id="pricing">
+          <div class="section__header">
+            <h2>Simple pricing for growing products</h2>
+            <p>Start in minutes. Upgrade only when your team is ready.</p>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="card pricing-card">
+              <h3 class="pricing-card__name">Starter</h3>
+              <p class="pricing-card__price">$0<span>/month</span></p>
+              <p class="pricing-card__tagline">Ideal for early‑stage teams.</p>
+              <ul class="pricing-card__features">
+                <li>Up to 3 team members</li>
+                <li>Live product overview dashboard</li>
+                <li>7‑day data history</li>
+              </ul>
+              <a href="#cta" class="btn btn--ghost btn--full">Start for free</a>
+            </article>
+
+            <article class="card pricing-card pricing-card--highlight">
+              <div class="pricing-card__badge">Most popular</div>
+              <h3 class="pricing-card__name">Growth</h3>
+              <p class="pricing-card__price">$39<span>/month</span></p>
+              <p class="pricing-card__tagline">
+                For teams that run experiments every week.
+              </p>
+              <ul class="pricing-card__features">
+                <li>Up to 10 team members</li>
+                <li>Full user journey analytics</li>
+                <li>90‑day data history</li>
+                <li>Email summaries for your whole team</li>
+              </ul>
+              <a href="#cta" class="btn btn--primary btn--full">Start free trial</a>
+            </article>
+          </div>
+        </section>
+
+        <!-- Final call‑to‑action with a small email capture form -->
+        <section class="section section--muted section--cta" id="cta">
+          <div class="cta">
+            <div class="cta__text">
+              <h2>Ready to see your product clearly?</h2>
+              <p>
+                Enter your work email and we will set up a demo workspace with
+                sample data so you can explore Elevvo Insight in under a minute.
+              </p>
+            </div>
+            <form class="cta__form" autocomplete="off">
+              <label class="visually-hidden" for="workEmail">Work email</label>
+              <input
+                id="workEmail"
+                name="workEmail"
+                type="email"
+                placeholder="you@company.com"
+                required
+              />
+              <button type="submit" class="btn btn--primary">
+                Get demo link
+              </button>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <!-- Simple footer with small print -->
+      <footer class="site-footer">
+        <p>© 2026 Elevvo Insight. All rights reserved.</p>
+        <p class="site-footer__note">
+          Demo landing page for a fictional analytics product.
+        </p>
+      </footer>
+    </div>
+
+    <!-- Lightweight behaviour for theme toggle and CTA form -->
+    <script src="script.js"></script>
+  </body>
+</html>
+
